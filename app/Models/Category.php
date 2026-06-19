@@ -1,0 +1,45 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Category extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'short_code',
+        'display_title',
+        'division',
+        'description',
+        'parent_id',
+        'icon_url',
+		'icon_url_alt',
+        'menu_order',
+		'meta_title',
+		'meta_keywords',
+		'meta_description',
+		'banner',
+		'banner_alt',
+        'status'
+    ];
+
+    public function parent()
+    {
+        return $this->belongsTo(self::class, 'parent_id', 'id');
+    }
+
+    public function childs()
+    {
+        return $this->hasMany(self::class, 'parent_id', 'id')->with('childs')->orderBy('id', 'DESC');
+    }
+	
+	public function products()
+    {
+        return $this->hasMany(Product::class, 'category_id', 'id');
+    }
+   
+}

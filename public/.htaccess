@@ -1,0 +1,63 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+
+################ Redirect Urls ################
+#RewriteEngine on
+#RewriteBase /
+#RewriteCond %{HTTP_HOST} ^yesmachinery.ae [NC]
+
+#RewriteRule ^(.\*)$ https://www.yesmachinery.ae/$1 [L,R=301,NC]
+#Redirect 301 www.yesmachinery.ae https://www.yesmachinery.ae/
+
+## STATIC Pages
+
+#Redirect 301 "/index.php" "/"
+RedirectMatch 301 "/products.php" "/category/pvc-floor-tiles"
+RedirectMatch 301 "/pvc-floor-tiles.php" "/product/pvc-tiles"
+RedirectMatch 301 "/heavy-duty-tiles.php" "/product/heavy-duty-tiles"
+RedirectMatch 301 "/industrial-floor-mat.php" "/product/industrial-floor-mat"
+RedirectMatch 301 "/entrance-floor-mat.php" "/category/entrance-floor-mat"
+RedirectMatch 301 "/outdoor-floor-mats.php" "/"
+RedirectMatch 301 "/sports-mats.php" "/"
+RedirectMatch 301 "/application.php" "/application"
+RedirectMatch 301 "/industrial-sectors.php" "/application/industrial-sectors"
+RedirectMatch 301 "/warehouses.php" "/application/warehouses"
+RedirectMatch 301 "/garages.php" "/application/garages"
+RedirectMatch 301 "/gymnasiums.php" "/application/gym-floor-tiles"
+RedirectMatch 301 "/commercial-buildings.php" "/application/office-flooring"
+RedirectMatch 301 "/exhibition-centers.php" "/application/exhibition-flooring"
+RedirectMatch 301 "/business-area.php" "/"
+RedirectMatch 301 "/sports.php" "/application/sports-flooring"
+RedirectMatch 301 "/schools.php" "/application/school-flooring"
+RedirectMatch 301 "/hospitals.php" "/application/hospital-flooring"
+RedirectMatch 301 "/stables.php" "/application/stables"
+RedirectMatch 301 "/schools.php" "/application/school-flooring"
+RedirectMatch 301 "/hospitals.php" "/application/hospital-flooring"
+RedirectMatch 301 "/events.php" "/application/event-flooring"
+RedirectMatch 301 "/about.php" "/about"
+RedirectMatch 301 "/works.php" "/"
+RedirectMatch 301 "/contact-us.php" "/contact-us"
+RedirectMatch 301 "/blogs.php" "/blogs"
+RedirectMatch 301 "/news.php" "/news"
+RedirectMatch 301 "/privacy-policy.php" "/privacy-policy"
+RedirectMatch 301 "/faq.php" "/faq"

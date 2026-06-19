@@ -61,41 +61,36 @@
           </div>
         </div>
         <div class="col-lg-5">
-          <div class="widget-right-section ps-xl-4 mb-40">
-            <div class="widget widget__search grey-bg mb-0">
-              <div class="widget-title-box mb-20">
+          <div class="widget-right-section blog-detail-sidebar ps-xl-4 mb-40">
+            <div class="widget widget__search grey-bg">
+              <div class="widget-title-box">
                 <h4 class="widget__title__three">Search Here</h4>
               </div>
               <form class="subscribe-form" action="#">
-                <input type="text" placeholder="Search Anything">
-                <button class="widget-btn"><i class="bi bi-search"></i></button>
+                <input type="text" placeholder="Search Anything" aria-label="Search blog posts">
+                <button type="submit" class="widget-btn" aria-label="Search"><i class="bi bi-search"></i></button>
               </form>
             </div>
-            <div class="grey-bg widget widget-post mb-60">
-              <div class="widget-title-box mb-20">
+            <div class="grey-bg widget widget-post">
+              <div class="widget-title-box">
                 <h4 class="widget__title__three">Recent Post</h4>
               </div>
               <ul class="post-list">
                 <?php $__currentLoopData = $recent_posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $recent_post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <li>
-                  <div class="blog-post mb-20">
+                  <div class="blog-post">
+                    <a href="<?php echo e(route('blogs.detail', $recent_post->slug)); ?>" class="post-thumb-link">
+                      <img class="blog-thumb-img lozad" data-src="<?php echo e(env('APP_ADMIN_URL')); ?><?php echo e($recent_post->default_image); ?>" alt="<?php echo e($recent_post->alt); ?>">
+                    </a>
                     <div class="post-content">
-                      <span><?php echo \Carbon\Carbon::parse($recent_post->created_at)->format('d M Y'); ?> </span>
-                      <h6 class="mb-10"><a href="<?php echo e(route('blogs.detail',$recent_post->slug)); ?>"> <?php echo e($recent_post->title); ?>
-
-                        </a></h6>
+                      <span><?php echo \Carbon\Carbon::parse($recent_post->created_at)->format('d M Y'); ?></span>
+                      <h6><a href="<?php echo e(route('blogs.detail', $recent_post->slug)); ?>"><?php echo e($recent_post->title); ?></a></h6>
                     </div>
-                    <a href="<?php echo e(route('blogs.detail',$recent_post->slug)); ?>"><img class="blog-thumb-img lozad" data-src="<?php echo e(env('APP_ADMIN_URL')); ?><?php echo e($recent_post->default_image); ?>" alt="<?php echo e($recent_post->alt); ?>"></a>
                   </div>
                 </li>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-
-
-
               </ul>
             </div>
-
           </div>
         </div>
       </div>

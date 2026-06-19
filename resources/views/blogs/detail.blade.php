@@ -43,7 +43,7 @@
       <div class="row">
         <div class="col-lg-7 blog-details">
           <div class="blog__details__wrapper">
-
+            <img class="w-100 lozad" data-src="{{env('APP_ADMIN_URL')}}{{$blog->default_image}}" alt="{{$blog->alt}}">
             <div class="blog__meta mb-25">
               <a class="date-text text-body" href="#"> {!! \Carbon\Carbon::parse($blog->created_at)->format('d M Y') !!} </a>
               <a class="meta-author float-end" href="#">By <span class="text-heding fw-semi">

@@ -118,7 +118,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<div class="offset-widget mb-30 pr-10">
 					<div class="info-widget info-widget2">
 						<h4 class="offset-title mb-20">Contact Info</h4>
-					
+						<p> 
+						Building No: 7446 - King Abdulaziz Rd 
+						<br>Madinat Al Ummal Dist.
+						<br>Al Khobar 34441
+						<br>Kingdom of Saudi Arabia
+						<br>Short Address: EKJC7446
+						</p>
+						<p>
+							<i class="fal fa-phone"></i>
+							<a href="tel:+966554222379" target="_blank"> +966 55 422 2379 </a>
+						</p>
 						<p>
 							<i class="fal fa-envelope-open"></i>
 							<a href="mailto:sales@rhinofloor.ae" target="_blank"> sales@rhinofloor.ae </a>

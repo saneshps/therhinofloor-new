@@ -518,7 +518,7 @@
 
         <h6> <a href="mailto:sales@rhinofloor.ae"> sales@rhinofloor.ae </a> </h6>
 
-        <h5> <a href="tel:+97165264382"> +971 65 26 43 82 </a> </h5>
+        <h5> <a href="tel:+97165264382"> +966 55 422 2379 </a> </h5>
 
       </div>
 
